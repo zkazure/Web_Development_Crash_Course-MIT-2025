@@ -1,3 +1,152 @@
 #+title: W0: HTML/CSS
 #+author: Kazure Zheng
 
+* add a image
+
+it easy. 
+
+* centering
+
+you need to use CSS, so connect to a stylesheet first.
+
+#+begin_src html
+  <head>
+    <title>Catbook</title>
+    <link href="styles.css" rel="stylesheet" />
+  </head>
+#+end_src
+
+#+begin_src css
+  .u-textCenter {
+      text-align: center;
+  }
+#+end_src
+
+
+* importing fonts
+
+Gets font from [[https://fonts.google.com/][Google fonts]].
+
+1. chooser you favourite fonts
+2. *Get embed code*
+3. click *import*
+4. copy the website in the html.
+
+#+begin_src css
+  @import url('https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&display=swap');
+#+end_src
+
+set the font.
+
+#+begin_src css 
+  body {
+      font-family: Bitcount Grid Double, sans-serif;
+  }
+#+end_src
+
+Notice that "+" in *Bitcount+Grid+Double* convert into " " in *font-family*.
+
+* adding a navbar
+
+#+begin_src html
+  <nav class="navContainer">
+    <h1 class="navTitle">Catbook</h1>
+  </nav>
+#+end_src
+
+
+* variable in css
+
+#+begin_src css 
+  :root {
+      --primary: #396dff;
+      --grey: #f7f7f7;
+      --white: #ffffff;
+  }
+#+end_src
+
+
+* navTitle
+
+#+begin_src css 
+  .navTitle {
+      color: var(--primary);
+      font-size: 20px;
+      margin: 0;
+      font-weight: 400;
+  }
+#+end_src
+
+
+* styling the NavBar
+
+#+begin_src css 
+  .navContainer {
+      background-color: var(--primary);
+  }
+#+end_src
+
+* no margin
+
+#+begin_src css 
+  body {
+      font-family: "Open Sans", sans-serif;
+      margin: 0;
+  }
+#+end_src
+
+or you can
+
+#+begin_src css 
+  body {
+      font-family: "Open Sans", sans-serif;
+      margin: 0px 10px;
+      /* even 0px 10px 20px 顺时针*/
+  }
+#+end_src
+
+* add padding
+
+#+begin_src css 
+  .navContainer {
+      background-color: var(--primary);
+      padding: 32px 64px;
+  }
+#+end_src
+
+*8pt Grid System* you should make every be the multiple of 8
+
+* border-radius
+
+#+begin_src html
+  <img src="cat.png" alt="turtle" class="avatar"/>
+#+end_src
+
+
+#+begin_src css 
+  .avatar {
+      border-radius: var(--m);
+  }
+#+end_src
+
+* exercise: perfect circle
+
+* horizontal Format
+
+#+begin_src css 
+  .u-flex {
+      display: flex;
+      flex-direction: row;
+  }
+#+end_src
+
+* Box sizing
+
+how to change the size boxes in the flex.
+
+#+begin_src css 
+  .subcontainer {
+      flex-basis: 0;
+      flex-grow: 1;
+  }
+#+end_src
