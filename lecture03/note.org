@@ -28,20 +28,35 @@ opening and closing tag, with ~<tagname>~ and ~</tagname>~
 
 in the opening tag. 
 #+begin_src html
-
+  <div att="attribute01">This is a attributions</div>
 #+end_src
 
 ** image
 
-img src=
+#+begin_src html
+  <img alt="alternative" src="path" />
+#+end_src
 
-- if browser fail to display the image, put it but "noting", need alt
-- self closing: because you will never put anything in image.
+- ~alt~: sometimes, browser won't display the correct image. So you need to add alternative name, so that it will display as a word at least. 
+- self-closing: nobody will put anything in the image
   
 ** list
-ul
-ol
-li
+
+- ~ul~ is unordered list.
+- ~ol~ is ordered list. 
+- ~li~ is item.
+
+#+begin_src html
+  <ul>
+    <li>list1</li>
+    <li>list2</li>
+  </ul>
+
+  <ol>
+    <li>list1</li>
+    <li>list2</li>
+  </ol>
+#+end_src
 
 
 ** div & span
