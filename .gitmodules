@@ -1,0 +1,3 @@
+[submodule "catbook-react"]
+	path = catbook-react
+	url = https://github.com/weblab-workshops/catbook-react.git
