@@ -1,0 +1,104 @@
+#+title: Lecture 03 HTML/CSS Intro
+#+author: Kazure Zheng
+
+* HTML
+
+Hypertext Markup Language
+
+HTML = Nested Boxes
+
+#+begin_src html
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <title>Title!</title>
+    </head>
+    <body>
+      <h1>Heading</h1>
+      <p>paragraph</p>
+    </body>
+  </html>
+#+end_src
+
+** tag
+opening and closing tag, with ~<tagname>~ and ~</tagname>~
+
+
+** attribute
+
+in the opening tag. 
+#+begin_src html
+
+#+end_src
+
+** image
+
+img src=
+
+- if browser fail to display the image, put it but "noting", need alt
+- self closing: because you will never put anything in image.
+  
+** list
+ul
+ol
+li
+
+
+** div & span
+
+groups block section
+
+groups an inline section
+
+* CSS
+
+** hello
+Cascading Style Sheet
+
+#+begin_src css
+  div {
+      color: red;
+      font-family: Arial;
+      font-size: 24pt;
+  }
+#+end_src
+
+** attribute and class
+
+In html, there is attribute and class.
+
+#+begin_src html
+  <div class="abc">This is the class</div>
+
+  <div id="efg">This is the id</div>
+#+end_src
+
+In CSS, you can do like:
+
+#+begin_src css
+  .abc {
+      /* This for class */
+      color: red;
+      font-family: Arial;
+      font-size: 24pt;
+  }
+
+  #efg {
+      /* This is for id */
+      color: blue;
+      font-family: Arial;
+      font-size: 24pt;    
+  }
+#+end_src
+
+*NOTICE*: every element can only have one ID and multiple class
+
+** link stylesheet
+
+#+begin_src css
+  <link rel="stylesheet" href="style.css" />  
+#+end_src
+
+- *RELation*: it speaks the relation between document and the resources.
+- *Hyretext REFerence*: it speaks the position of resources.
+
