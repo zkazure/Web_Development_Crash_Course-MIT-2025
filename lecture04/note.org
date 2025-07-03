@@ -65,6 +65,19 @@ Notice that "+" in *Bitcount+Grid+Double* convert into " " in *font-family*.
   }
 #+end_src
 
+** fallback values
+
+In ~var()~, it can take the second value as fallback value, if the
+variable is undefined.
+#+begin_src css
+  .element {
+      color: var(--undefined-color, red);
+  }
+#+end_src
+
+** scope
+
+only global in ~:root~. 
 
 * navTitle
 
@@ -130,6 +143,13 @@ or you can
 #+end_src
 
 * exercise: perfect circle
+
+#+begin_src css 
+  .avatar {
+      border-radius: 500px;
+      /* equal to 50% */
+  }
+#+end_src
 
 * horizontal Format
 
