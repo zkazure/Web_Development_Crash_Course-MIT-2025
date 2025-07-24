@@ -1,11 +1,13 @@
-#+title: W0: HTML/CSS
+#+title: Work
 #+author: Kazure Zheng
 
-* add a image
+
+* HTML/CSS
+** add a image
 
 it easy. 
 
-* centering
+** centering
 
 you need to use CSS, so connect to a stylesheet first.
 
@@ -23,7 +25,7 @@ you need to use CSS, so connect to a stylesheet first.
 #+end_src
 
 
-* importing fonts
+** importing fonts
 
 Gets font from [[https://fonts.google.com/][Google fonts]].
 
@@ -46,7 +48,7 @@ set the font.
 
 Notice that "+" in *Bitcount+Grid+Double* convert into " " in *font-family*.
 
-* adding a navbar
+** adding a navbar
 
 #+begin_src html
   <nav class="navContainer">
@@ -55,7 +57,7 @@ Notice that "+" in *Bitcount+Grid+Double* convert into " " in *font-family*.
 #+end_src
 
 
-* variable in css
+** variable in css
 
 #+begin_src css 
   :root {
@@ -65,7 +67,7 @@ Notice that "+" in *Bitcount+Grid+Double* convert into " " in *font-family*.
   }
 #+end_src
 
-** fallback values
+*** fallback values
 
 In ~var()~, it can take the second value as fallback value, if the
 variable is undefined.
@@ -75,11 +77,11 @@ variable is undefined.
   }
 #+end_src
 
-** scope
+*** scope
 
 only global in ~:root~. 
 
-* navTitle
+** navTitle
 
 #+begin_src css 
   .navTitle {
@@ -91,7 +93,7 @@ only global in ~:root~.
 #+end_src
 
 
-* styling the NavBar
+** styling the NavBar
 
 #+begin_src css 
   .navContainer {
@@ -99,7 +101,7 @@ only global in ~:root~.
   }
 #+end_src
 
-* no margin
+** no margin
 
 #+begin_src css 
   body {
@@ -118,7 +120,7 @@ or you can
   }
 #+end_src
 
-* add padding
+** add padding
 
 #+begin_src css 
   .navContainer {
@@ -129,7 +131,7 @@ or you can
 
 *8pt Grid System* you should make every be the multiple of 8
 
-* border-radius
+** border-radius
 
 #+begin_src html
   <img src="cat.png" alt="turtle" class="avatar"/>
@@ -142,7 +144,7 @@ or you can
   }
 #+end_src
 
-* exercise: perfect circle
+** exercise: perfect circle
 
 #+begin_src css 
   .avatar {
@@ -151,7 +153,7 @@ or you can
   }
 #+end_src
 
-* horizontal Format
+** horizontal Format
 
 #+begin_src css 
   .u-flex {
@@ -160,7 +162,7 @@ or you can
   }
 #+end_src
 
-* Box sizing
+** Box sizing
 
 how to change the size boxes in the flex.
 
@@ -170,3 +172,4 @@ how to change the size boxes in the flex.
       flex-grow: 1;
   }
 #+end_src
+

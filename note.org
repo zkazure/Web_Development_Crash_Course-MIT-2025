@@ -1,7 +1,9 @@
-#+title: Lecture 03 HTML/CSS Intro
+#+title: Notes
 #+author: Kazure Zheng
 
-* HTML
+* HTML/CSS Intro
+
+** HTML
 
 Hypertext Markup Language
 
@@ -20,18 +22,18 @@ HTML = Nested Boxes
   </html>
 #+end_src
 
-** tag
+*** tag
 opening and closing tag, with ~<tagname>~ and ~</tagname>~
 
 
-** attribute
+*** attribute
 
 in the opening tag. 
 #+begin_src html
   <div att="attribute01">This is a attributions</div>
 #+end_src
 
-** image
+*** image
 
 #+begin_src html
   <img alt="alternative" src="path" />
@@ -40,7 +42,7 @@ in the opening tag.
 - ~alt~: sometimes, browser won't display the correct image. So you need to add alternative name, so that it will display as a word at least. 
 - self-closing: nobody will put anything in the image
   
-** list
+*** list
 
 - ~ul~ is unordered list.
 - ~ol~ is ordered list. 
@@ -59,15 +61,15 @@ in the opening tag.
 #+end_src
 
 
-** div & span
+*** div & span
 
 groups block section
 
 groups an inline section
 
-* CSS
+** CSS
 
-** hello
+*** hello
 Cascading Style Sheet
 
 #+begin_src css
@@ -78,7 +80,7 @@ Cascading Style Sheet
   }
 #+end_src
 
-** attribute and class
+*** attribute and class
 
 In html, there is attribute and class.
 
@@ -108,7 +110,7 @@ In CSS, you can do like:
 
 *NOTICE*: every element can only have one ID and multiple class
 
-** link stylesheet
+*** link stylesheet
 
 #+begin_src css
   <link rel="stylesheet" href="style.css" />  
@@ -116,4 +118,5 @@ In CSS, you can do like:
 
 - *RELation*: it speaks the relation between document and the resources.
 - *Hyretext REFerence*: it speaks the position of resources.
+
 
