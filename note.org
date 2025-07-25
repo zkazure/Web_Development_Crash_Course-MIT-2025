@@ -1,9 +1,9 @@
 #+title: Notes
 #+author: Kazure Zheng
+* DAY 1
+** HTML/CSS Intro
 
-* HTML/CSS Intro
-
-** HTML
+*** HTML
 
 Hypertext Markup Language
 
@@ -22,18 +22,18 @@ HTML = Nested Boxes
   </html>
 #+end_src
 
-*** tag
+**** tag
 opening and closing tag, with ~<tagname>~ and ~</tagname>~
 
 
-*** attribute
+**** attribute
 
 in the opening tag. 
 #+begin_src html
   <div att="attribute01">This is a attributions</div>
 #+end_src
 
-*** image
+**** image
 
 #+begin_src html
   <img alt="alternative" src="path" />
@@ -42,7 +42,7 @@ in the opening tag.
 - ~alt~: sometimes, browser won't display the correct image. So you need to add alternative name, so that it will display as a word at least. 
 - self-closing: nobody will put anything in the image
   
-*** list
+**** list
 
 - ~ul~ is unordered list.
 - ~ol~ is ordered list. 
@@ -61,15 +61,15 @@ in the opening tag.
 #+end_src
 
 
-*** div & span
+**** div & span
 
 groups block section
 
 groups an inline section
 
-** CSS
+*** CSS
 
-*** hello
+**** hello
 Cascading Style Sheet
 
 #+begin_src css
@@ -80,7 +80,7 @@ Cascading Style Sheet
   }
 #+end_src
 
-*** attribute and class
+**** attribute and class
 
 In html, there is attribute and class.
 
@@ -110,7 +110,7 @@ In CSS, you can do like:
 
 *NOTICE*: every element can only have one ID and multiple class
 
-*** link stylesheet
+**** link stylesheet
 
 #+begin_src css
   <link rel="stylesheet" href="style.css" />  
@@ -120,20 +120,20 @@ In CSS, you can do like:
 - *Hyretext REFerence*: it speaks the position of resources.
 
 
-* Intro JS
+** Intro JS
 
-** call the console in firefox
+*** call the console in firefox
 
 ~Ctrl+Shift+J~  
 
-** Types
+*** Types
 
 basic types and
 - boolean
 - any
 - undefined
 
-** operater
+*** operater
 
 #+begin_src javascript
   2 === 2   // true
@@ -143,7 +143,7 @@ basic types and
 
 it use triple equal to compare. 
 
-** defining variables
+*** defining variables
 
 #+begin_src javascript
   let myBoolean = true
@@ -153,11 +153,11 @@ use ~let~ not ~var~
 - ~let~ is block-scoped
 - ~var~ is function-scoped. 
   
-** convention
+*** convention
 
 use =camelCase=
 
-** output
+*** output
 
 console.log()
 
@@ -169,7 +169,7 @@ print out in the consoled
   console.log(`a * b = ${a * b}`);
 #+end_src
 
-** alert
+*** alert
 
 #+begin_src javascript
   alert("Congratulations!");
@@ -177,7 +177,7 @@ print out in the consoled
 
 it generates a pop-up  notifications. 
 
-** arrays
+*** arrays
 
 #+begin_src javascript
   let pets = ["flower", 42, false];
@@ -187,7 +187,7 @@ it generates a pop-up  notifications.
   pets.push("rabbit"); // add to the end
 #+end_src
 
-** loop
+*** loop
 
 #+begin_src javascript
   let pets = ["flower", 42, false];
@@ -198,7 +198,7 @@ it generates a pop-up  notifications.
   }
 #+end_src
 
-** objects
+*** objects
 
 #+begin_src javascript
   const myCar = {
@@ -215,7 +215,7 @@ it generates a pop-up  notifications.
 #+end_src
 
 
-** equality for array
+*** equality for array
 
 #+begin_src javascript
   let arr1 = [1, 2, 3];
@@ -227,14 +227,14 @@ it generates a pop-up  notifications.
 
 ~===~ is comparing the address of arrays. 
 
-** copy array
+*** copy array
 
 #+begin_src javascript
   let arr = [1, 2, 3];
   let copyArr = [...arr];
 #+end_src
 
-** function
+*** function
 
 #+begin_src javascript
   const functionName = (variables) => {
@@ -243,5 +243,65 @@ it generates a pop-up  notifications.
   };
 #+end_src
 
-** [[https://www.jschallenger.com/javascript-practice][JS Practice]]
+*** [[https://www.jschallenger.com/javascript-practice][JS Practice]]
+
+* DAY 2
+
+** Advanced JS: Arrays and Callbacks
+
+*** Practice
+#+begin_src javascript
+  let tempC = [1, 2];
+
+  const CToF = (tempC) => {
+    let tempF = tempC;
+    for (temp of tempF) {
+      temp = temp * 9/5 +32;
+    }
+    
+    return tempF;
+  };
+
+  let tempF = CToF(tempC);
+
+  console.log(tempF);
+#+end_src
+
+*** callback function
+
+#+begin_src javascript
+  const modifyArr = (arr, transformFunc) => {
+    modifiedArr = [];
+
+    for (i=0; i<arr.length; i++) {
+      tmp = transformFunc(arr[i]);
+      modifiedArr.push(tmp);
+    }
+
+    return modifiedArr;
+  }
+#+end_src
+
+*** function shorten
+
+#+begin_src javascript
+  (arr) => (output)
+#+end_src
+
+it directly return the output. 
+
+*** map practice
+
+#+begin_src javascript
+  const myArr = [1, 2, 3, 4, 5];
+
+  const newArr = myArr.map( (num) => (num * 3));
+#+end_src
+
+*** filter
+
+#+begin_src javascript
+  let values = [1, 0, -1];
+  let posValues = values.filter(x => x>0);
+#+end_src
 

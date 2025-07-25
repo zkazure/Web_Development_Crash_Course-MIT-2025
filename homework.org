@@ -1,0 +1,14 @@
+#+title: Homework
+
+* Install Node + NPM
+
+[[weblab.is/hw0][HW0 deu eod: Install Node + NPM]]
+
+** check environment
+
+#+begin_src shell
+  git --version
+  node --version
+  npm --version
+#+end_src
+
