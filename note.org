@@ -120,3 +120,128 @@ In CSS, you can do like:
 - *Hyretext REFerence*: it speaks the position of resources.
 
 
+* Intro JS
+
+** call the console in firefox
+
+~Ctrl+Shift+J~  
+
+** Types
+
+basic types and
+- boolean
+- any
+- undefined
+
+** operater
+
+#+begin_src javascript
+  2 === 2   // true
+  2 === "2" // flase
+  2 == "2"  // true !!!
+#+end_src
+
+it use triple equal to compare. 
+
+** defining variables
+
+#+begin_src javascript
+  let myBoolean = true
+#+end_src
+
+use ~let~ not ~var~
+- ~let~ is block-scoped
+- ~var~ is function-scoped. 
+  
+** convention
+
+use =camelCase=
+
+** output
+
+console.log()
+
+print out in the consoled
+
+#+begin_src javascript
+  const a = 5;
+  const b = 10;
+  console.log(`a * b = ${a * b}`);
+#+end_src
+
+** alert
+
+#+begin_src javascript
+  alert("Congratulations!");
+#+end_src
+
+it generates a pop-up  notifications. 
+
+** arrays
+
+#+begin_src javascript
+  let pets = ["flower", 42, false];
+
+  pets.pop(); // remove from end
+
+  pets.push("rabbit"); // add to the end
+#+end_src
+
+** loop
+
+#+begin_src javascript
+  let pets = ["flower", 42, false];
+
+  for (const animal of pets) {
+    const phrase = "I love my" + animal;
+    console.log(phrase);
+  }
+#+end_src
+
+** objects
+
+#+begin_src javascript
+  const myCar = {
+    make: "Ford",
+    year : 2005
+  };
+
+  console.log(myCar.make);
+  console.log(myCar["year"]);
+
+  const make = myCar.make;
+  ocnst year = myCar.model; 
+  const {make, year} = myCar;
+#+end_src
+
+
+** equality for array
+
+#+begin_src javascript
+  let arr1 = [1, 2, 3];
+  let arr2 = [1, 2, 3];
+
+  arr1 === arr2;  // false!!!
+#+end_src
+
+
+~===~ is comparing the address of arrays. 
+
+** copy array
+
+#+begin_src javascript
+  let arr = [1, 2, 3];
+  let copyArr = [...arr];
+#+end_src
+
+** function
+
+#+begin_src javascript
+  const functionName = (variables) => {
+    // ...
+    return 0;
+  };
+#+end_src
+
+** [[https://www.jschallenger.com/javascript-practice][JS Practice]]
+
