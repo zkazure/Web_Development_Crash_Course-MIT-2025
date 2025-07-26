@@ -305,3 +305,161 @@ it directly return the output.
   let posValues = values.filter(x => x>0);
 #+end_src
 
+** Intro to React
+
+*** Basic concept
+you can customize tags to be components of a website interface.
+
+reusibility is very important.
+generalize the components first then render it.
+
+- props: immutable. 
+- state: mutable, it should be some dynamic components, like replies. 
+
+*** Practice
+
+**** CommentReply.js
+
+#+begin_src js
+  import React, { useState } from 'react';
+
+  const CommentReply = (props) => {
+    // function logic
+
+    // initialize isLiked to false
+    // declares setIsLiked as the function to update isLiked.
+    const [isLiked, setIsLiked] = useState(false)
+    
+    
+    return (
+      // what you want to render
+
+      /* example
+      <div className="comment-text">
+        <h5>Joyce Yoon</h5>
+        <p>woww peak preschool energy</p>
+      </div>
+      ,*/
+
+      <div className="comment-text">
+        <h5>{props.name}</h5>
+        <p>{props.content}</p>
+        <p>{isLiked ? "Liked" : "like"}</p>
+      </div>
+      
+    );
+  };
+
+  export default CommentReply;
+#+end_src
+
+
+- ~()~ allows us to write JSX("HTML") code inside JavaScript.
+- ~{}~ allows us to return to JavaScript inside the JSX environment.
+
+In a word, you can write "HTML" in ~()~ of JavaScript and write JavaScript in ~{}~ inside ~()~ of JavaScript. 
+
+
+**** code facebook
+
+***** App.js
+#+begin_src js
+  /*
+    app
+    navbar, intro, photos, post
+  ,*/
+
+  import React from "react";
+  import NavBar from "./NavBar";
+  import Photos from "./Photos";
+  import Intro from "./Intro";
+  import Post from "./Post";
+
+  const App = () => {
+    return (
+      <div>
+        <NavBar />
+        <div>
+          <Intro />
+          <Photos />
+        </div>
+        <Post />
+      </div>
+    );
+  };
+
+  export default App;
+#+end_src
+
+
+***** Intro.js
+#+begin_src js
+  import React from "react";
+
+  const Intro = (props) => {
+    return (
+      <div>
+        <p>
+          Studies t <b>{props.education}</b>
+        </p>
+        <p>
+          From <b>{props.city}</b>
+        </p>
+      </div>
+    );
+  };
+
+  export default Intro;
+#+end_src
+
+
+***** Photos.js
+#+begin_src js
+  import React from "react";
+
+  const Photos = (props) => {
+
+    const myImageTags = props.links.map((photoLink) => {
+      return <img alt="" src={photoLink} />;
+    });
+
+    return (
+      <div>
+        <h3>Photos</h3>
+        {myImageTags}
+      </div>
+    );
+  };
+
+  export default Photos; 
+#+end_src
+
+
+***** Post.js
+
+#+begin_src js
+  import React, { useState } from "react";
+
+  const Post = (props) => {
+    const [isLiked, setIsLiked] = useState(false);
+    
+    return (
+      <div className="post">
+        <h3>{props.name}</h3>
+        <p>{props.text}</p>
+        <button>
+          onClick={() => {
+            setIsLiked(!isLiked);
+          }}>
+          {isLiked ? "Liked" : "Like"}
+        </button>
+      </div>
+    );
+  };
+
+  export default Post;
+#+end_src
+
+
+** React Lifecycle and Hooks
+
