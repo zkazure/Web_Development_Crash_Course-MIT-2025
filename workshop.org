@@ -1,4 +1,4 @@
-#+title: Work
+#+title: Workshop
 #+author: Kazure Zheng
 
 
@@ -172,4 +172,80 @@ how to change the size boxes in the flex.
       flex-grow: 1;
   }
 #+end_src
+
+* React
+** basic conception
+
+container is the scale of the code block.
+
+state is to set a global value, and can be fetch by props.
+It is very different, initialized, controlled by specific function. 
+
+props is the function to fetch outside value.
+
+** NavBar
+
+#+begin_src javascript
+  const NavBar = () => {
+    return (
+      <nav className="NavBar-container">
+        <div className="NavBar-title">Catbook</div>
+      </nav>
+    );
+  };
+#+end_src
+
+
+container need a padding and color.
+
+#+begin_src css
+  .NavBar-container {
+    padding: var(--s) var(--m);
+    background-color: var(--primary);
+  }
+
+  .NavBar-title {
+    color: var(--white);
+    font-size: 20px;
+  }
+#+end_src
+
+** state
+*** initialize
+#+begin_src javascript
+  const [value, controlValue] = useState(defaultValue);
+#+end_src
+*** control
+#+begin_src javascript
+  controlValue(
+    // do anything to the corresponding value. 
+  )
+#+end_src
+** props
+
+#+begin_src javascript
+  const CatHappiness = (props) => {
+    return (
+      //...
+        <p className="CatHappiness-storyContent">{props.catHappiness}</p>
+      //...
+    );
+  };
+#+end_src
+** onClick
+Remember you have to use js in ~{}~
+#+begin_src javascript
+  return(
+    <div
+      className="random-container"
+      onClick={()=> {
+        // call funciton here.
+      }}
+    >
+    </div>
+  )
+#+end_src
+
+~onClick={*call function here is wrong!!!*}~
+you have to call function is a unnamed function. 
 

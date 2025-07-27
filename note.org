@@ -316,6 +316,31 @@ generalize the components first then render it.
 - props: immutable. 
 - state: mutable, it should be some dynamic components, like replies. 
 
+*** store state
+
+#+begin_src javascript
+  import React, { useState } from 'react';
+
+  const test = (props) => {
+    const [catHappiness, setC]
+    const [controlValue, setControlValue] = useState(defaultValue)
+  }
+#+end_src
+
+*** onclick
+#+begin_src javascript
+  return (
+      <button>
+      onClick={() => {
+        setControlValue(initialValue);
+      }}>
+      {controlFunction}
+    </button>
+
+  );
+#+end_src
+
+
 *** Practice
 
 **** CommentReply.js
