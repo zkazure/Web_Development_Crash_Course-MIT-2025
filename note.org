@@ -325,6 +325,7 @@ generalize the components first then render it.
     const [catHappiness, setC]
     const [controlValue, setControlValue] = useState(defaultValue)
   }
+
 #+end_src
 
 *** onclick
@@ -488,3 +489,123 @@ In a word, you can write "HTML" in ~()~ of JavaScript and write JavaScript in ~{
 
 ** React Lifecycle and Hooks
 
+
+*** state
+#+begin_src js
+  buyDog = () => {
+    setPets([...pets, "dog"])  // keep the previous value
+  }
+#+end_src
+
+*** share state
+You can not share state between children components.
+
+1. move it into parent
+2. pass value and setter down to children as props
+
+*** useState is not enough
+
+#+begin_src js
+  testingStuff = () => {
+    setPersons([...persons, "me"]);
+    console.log(persons);
+  }
+#+end_src
+
+it will print out ~[]~, because the setSatate will not run immediately or so fast before next command.
+
+You should use ~useEffect()~
+
+#+begin_src js
+  useEffect(() => {
+    console.log(persons);
+  }, [persons])
+#+end_src
+*** useEffect() hook
+
+- runs after specific value changed
+- used to synchronize with something external to React.
+
+#+begin_src js
+  const myFunciton  = () => {
+    // ...
+
+    return () => {
+      /*
+        run when the component dismounts
+      ,*/
+      
+    }
+  }
+
+  useEffect(myFunction, [var1, var2])  // run when var1 or var2 changed
+
+  useEffect(myFunction, []) // only run for the first time
+
+  useEffect(myFunction) // call the at every render
+#+end_src
+*** write html in jsx
+#+begin_src js
+  const header = <h1>i love nicholas tsao</h1>;
+
+  return (
+      <div>
+      {header}
+    </div>
+  )
+#+end_src
+*** render data in array
+
+#+begin_src js
+  const data = [
+    { id: 0, text: "hello"},
+    { id: 1, text: "world"}
+  ];
+  return data.map((item) => {
+    return <div key={item.id}>{item.text }</div>
+  })
+#+end_src
+*** React Component
+
+#+begin_src js
+  const Button = () => {
+    const [hasBeenClicked, setHasBeenClicked] =useState(false)
+
+    useEffect(() => {
+      if (hasBeenClicked) {
+        console.log("Button has been clicked!");
+      }
+    }, [hasBeenClicked]);
+
+    return <button onClick={() => setHasBeenClicked(true)}>Click me!</button>
+  }
+#+end_src
+*** React Component Trees
+
+#+begin_src js
+  import {Button} from "....";
+
+  const Form = () => {
+    return (
+        <div>
+        <input>Click the button blow</input>
+        <Button />
+        </div>
+    )
+  }
+#+end_src
+
+the tree only contain form and button.
+it will ignore all html element.
+
+*** component's lifecycle
+
+1. mounting
+2. updating
+3. dismounting
+
+*** create a blank React app
+
+#+begin_src sh
+  npm create vite@latest
+#+end_src
